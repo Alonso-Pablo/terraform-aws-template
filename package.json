@@ -1,0 +1,18 @@
+{
+  "name": "terraform-aws-template",
+  "version": "1.0.0",
+  "description": "Terraform AWS template",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "tf:init": "cd deployment && terraform init && cd ..",
+    "tf:plan": "cd deployment && terraform plan -var-file=\"terraform.tfvars\" && cd ..",
+    "tf:apply": "cd deployment && terraform apply -var-file=\"terraform.tfvars\" && cd .."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
