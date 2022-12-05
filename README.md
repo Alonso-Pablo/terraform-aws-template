@@ -5,6 +5,16 @@
   - `docker`
   - `awscli`
 - Tener un poco de **dinero para gastar** en esta prueba con AWS.
+- Configurar aws cli: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+
+# Scripts:
+- Se crearon como atajos a los comandos normales.
+- Para ser ejecutados se recomienda estar situados en la carpeta principal del proyecto.
+```bash
+npm run tf:init # Igual a 'terraform init'; Inicia Terraform en la carpeta deployment/
+npm run tf:plan # Igual a 'terraform plan'; Muestra los cambios que va a generar terraform en la infraestructura (Tambien alerta si hay algun un error).
+npm run tf:apply # Igual a 'terraform apply'; Aplica los planes (en este caso los archivos provider.tf, ecr.tf, fargate.tf y network.tf,)
+```
 
 # Pasos:
 ## Generamos imagen con Docker 💿
@@ -12,13 +22,13 @@
 # Crea una imagen a partir del `Dockerfile` llamada some-image-name
 docker build -t some-image-name .
 ```
-## Corremos la imagen generada 🏃
+
+#### Testear imagen creada (Opcional) 🧪
 ```bash
 # Para correr la imagen creada en localhost
 docker run -p 12345:3000 -d some-image-name
 ```
 
-#### Helpers:
 ```bash
 # Ver los procesos corriendo en Docker
 docker ps
@@ -30,6 +40,7 @@ docker kill <process_name>
 ```
 
 ## Inicializamos Terraform 🌎
+- Para estos comandos es necesario estar posicionado en la carpeta `deployment/`
 
 ```bash
 # Inicializar el directorio como contenedor de codigo de Terraform
@@ -42,26 +53,6 @@ terraform init
 terraform plan
 ```
 
-```bash
-# Output del comando: terraform plan
-An execution plan has been generated and is shown below.
-Resource actions are indicated with the following symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # aws_ecr_repository.ecr_repo va a ser creado.
-  + resource "aws_ecr_repository" "ecr_repo" {
-      + arn                  = (known after apply)
-      + id                   = (known after apply)
-      + image_tag_mutability = "MUTABLE"
-      + name                 = "ecr_example_repo"
-      + registry_id          = (known after apply)
-      + repository_url       = (known after apply)
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-```
 ## Creamos un repositorio en ECR para nuestra imagen 💾
 
 ```bash

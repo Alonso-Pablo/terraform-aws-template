@@ -1,5 +1,5 @@
 # Declaramos que version de Node vamos a usar.
-FROM node:10
+FROM node:18.12-alpine
 
 # Declaramos que directorio vamos a usar dentro del contenedor.
 WORKDIR /usr/src/app
