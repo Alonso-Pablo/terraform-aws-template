@@ -7,7 +7,8 @@
     "start": "node app.js",
     "tf:init": "cd deployment && terraform init && cd ..",
     "tf:plan": "cd deployment && terraform plan -var-file=\"terraform.tfvars\" && cd ..",
-    "tf:apply": "cd deployment && terraform apply -var-file=\"terraform.tfvars\" && cd .."
+    "tf:apply": "cd deployment && terraform apply -var-file=\"terraform.tfvars\" && cd ..",
+    "tf:dest": "cd deployment && terraform destroy && cd .."
   },
   "keywords": [],
   "author": "",

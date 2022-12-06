@@ -14,6 +14,7 @@
 npm run tf:init # Igual a 'terraform init'; Inicia Terraform en la carpeta deployment/
 npm run tf:plan # Igual a 'terraform plan'; Muestra los cambios que va a generar terraform en la infraestructura (Tambien alerta si hay algun un error).
 npm run tf:apply # Igual a 'terraform apply'; Aplica los planes (en este caso los archivos provider.tf, ecr.tf, fargate.tf y network.tf,)
+npm run tf:dest # Igual a 'terraform destroy'; Limpia todos los recursos usados por Terraform.
 ```
 
 # Pasos:
