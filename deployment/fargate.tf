@@ -6,7 +6,7 @@
 resource "aws_ecs_task_definition" "backend_task" {
     family = "backend_example_app_family"
 
-    // ECS = (Amazon) Elastic Compute Cloud
+    // ECS = (Amazon) Elastic Container Service
     // Fargate es un tipo de ECS que requiere awsvpc network_mode
     requires_compatibilities = ["FARGATE"]
     network_mode = "awsvpc"
