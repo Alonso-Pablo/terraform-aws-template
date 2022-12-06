@@ -24,7 +24,7 @@ resource "aws_ecs_task_definition" "backend_task" {
 [
     {
         "name": "example_app_container",
-        "image": "<your_ecr_repo_url>:latest",
+        "image": "${var.aws_ecr_repo_url}:latest",
         "memory": 512,
         "essential": true,
         "portMappings": [

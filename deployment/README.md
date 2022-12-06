@@ -20,3 +20,7 @@
 
 - `terraform.tfvars`
   - Definimos las variables a usar en Terraform.
+
+- `variables.tf`
+  - 'Inicializamos' las variables. Terraform daria error sin crear este archivo.
+  - Podemos describir y poner reglas para cada variable.

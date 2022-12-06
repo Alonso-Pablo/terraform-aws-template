@@ -81,6 +81,7 @@ docker tag some-example-image:latest <repo_url>:latest
 # Enviamos la imagen
 docker push <repo_url>:latest
 ```
+- Ahora hay que usar esa url y completar las variables en el archivo `deployment/terraform.tfvars`
 
 ## Manejos de Secrets o Variables en Terraform 🙊
 - Mas informacion: https://developer.hashicorp.com/terraform/language/values/variables
